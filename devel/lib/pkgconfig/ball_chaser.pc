@@ -1,0 +1,8 @@
+prefix=/home/robond/Chaser/devel
+
+Name: ball_chaser
+Description: Description of ball_chaser
+Version: 0.0.0
+Cflags: -I/home/robond/Chaser/devel/include
+Libs: -L/home/robond/Chaser/devel/lib 
+Requires: 
