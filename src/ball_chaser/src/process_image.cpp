@@ -72,13 +72,15 @@ else if((left==0)&&(front>0)&&(right>0))
 {
 if(front>right)
 {
-drive_bot(2.0,0.0);
-drive_bot(0.0,-2.0);
+//drive_bot(2.0,0.0);
+//drive_bot(0.0,-2.0);
+drive_bot(2.0,-2.0);
 }
 else
 {
-drive_bot(0.0,-2.0);
-drive_bot(2.0,0.0);
+//drive_bot(0.0,-2.0);
+//drive_bot(2.0,0.0);
+drive_bot(2.0,-2.0);
 }
 }
 
@@ -89,18 +91,21 @@ else if((left>0)&&(front>0)&&(right==0))
 {
 if(front>left)
 {
-drive_bot(2.0,0.0);
-drive_bot(0.0,2.0);
+//drive_bot(2.0,0.0);
+//drive_bot(0.0,2.0);
+drive_bot(2.0,2.0);
 }
 else
 {
-drive_bot(0.0,2.0);
-drive_bot(2.0,0.0);
+//drive_bot(0.0,2.0);
+//drive_bot(2.0,0.0);
+
+drive_bot(2.0,2.0);
 }
 }
 
 else
-drive_bot(0.0,0.0);
+drive_bot(1.0,0.0);
 
 
 

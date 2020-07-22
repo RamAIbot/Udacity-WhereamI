@@ -1,8 +1,8 @@
-prefix=/home/robond/Chaser/devel
+prefix=/home/robond/Project3/UdacityFollowme/devel
 
 Name: my_robot
 Description: Description of my_robot
 Version: 0.0.0
 Cflags: 
-Libs: -L/home/robond/Chaser/devel/lib 
+Libs: -L/home/robond/Project3/UdacityFollowme/devel/lib 
 Requires: 
