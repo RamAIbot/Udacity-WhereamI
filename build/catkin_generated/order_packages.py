@@ -1,5 +1,5 @@
 # generated from catkin/cmake/template/order_packages.context.py.in
-source_root_dir = "/home/robond/Project3/UdacityFollowme/src"
+source_root_dir = "/home/workspace/whereami/Udacity-WhereamI/src"
 whitelisted_packages = "".split(';') if "" != "" else []
 blacklisted_packages = "".split(';') if "" != "" else []
-underlay_workspaces = "/home/robond/Project3/UdacityFollowme/devel;/opt/ros/kinetic".split(';') if "/home/robond/Project3/UdacityFollowme/devel;/opt/ros/kinetic" != "" else []
+underlay_workspaces = "/opt/ros/kinetic".split(';') if "/opt/ros/kinetic" != "" else []

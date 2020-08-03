@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/robond/Project3/UdacityFollowme/src
+CMAKE_SOURCE_DIR = /home/workspace/whereami/Udacity-WhereamI/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/robond/Project3/UdacityFollowme/build
+CMAKE_BINARY_DIR = /home/workspace/whereami/Udacity-WhereamI/build
 
 # Utility rule file for run_tests.
 
@@ -67,6 +67,6 @@ CMakeFiles/run_tests.dir/clean:
 .PHONY : CMakeFiles/run_tests.dir/clean
 
 CMakeFiles/run_tests.dir/depend:
-	cd /home/robond/Project3/UdacityFollowme/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/robond/Project3/UdacityFollowme/src /home/robond/Project3/UdacityFollowme/src /home/robond/Project3/UdacityFollowme/build /home/robond/Project3/UdacityFollowme/build /home/robond/Project3/UdacityFollowme/build/CMakeFiles/run_tests.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/workspace/whereami/Udacity-WhereamI/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/workspace/whereami/Udacity-WhereamI/src /home/workspace/whereami/Udacity-WhereamI/src /home/workspace/whereami/Udacity-WhereamI/build /home/workspace/whereami/Udacity-WhereamI/build /home/workspace/whereami/Udacity-WhereamI/build/CMakeFiles/run_tests.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/run_tests.dir/depend
 

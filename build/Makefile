@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/robond/Project3/UdacityFollowme/src
+CMAKE_SOURCE_DIR = /home/workspace/whereami/Udacity-WhereamI/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/robond/Project3/UdacityFollowme/build
+CMAKE_BINARY_DIR = /home/workspace/whereami/Udacity-WhereamI/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -68,17 +68,6 @@ install/fast: preinstall/fast
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -90,26 +79,16 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
 
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
 
-.PHONY : list_install_components/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
+.PHONY : edit_cache/fast
 
 # Special rule for the target install/local
 install/local: preinstall
@@ -133,11 +112,32 @@ test/fast: test
 
 .PHONY : test/fast
 
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+
+.PHONY : install/strip/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/robond/Project3/UdacityFollowme/build/CMakeFiles /home/robond/Project3/UdacityFollowme/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/workspace/whereami/Udacity-WhereamI/build/CMakeFiles /home/workspace/whereami/Udacity-WhereamI/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/robond/Project3/UdacityFollowme/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/workspace/whereami/Udacity-WhereamI/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -164,6 +164,19 @@ preinstall/fast:
 depend:
 	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
+
+#=============================================================================
+# Target rules for targets named doxygen
+
+# Build rule for target.
+doxygen: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 doxygen
+.PHONY : doxygen
+
+# fast build rule for target.
+doxygen/fast:
+	$(MAKE) -f CMakeFiles/doxygen.dir/build.make CMakeFiles/doxygen.dir/build
+.PHONY : doxygen/fast
 
 #=============================================================================
 # Target rules for targets named clean_test_results
@@ -218,30 +231,30 @@ tests/fast:
 .PHONY : tests/fast
 
 #=============================================================================
-# Target rules for targets named doxygen
+# Target rules for targets named gmock_main
 
 # Build rule for target.
-doxygen: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 doxygen
-.PHONY : doxygen
+gmock_main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gmock_main
+.PHONY : gmock_main
 
 # fast build rule for target.
-doxygen/fast:
-	$(MAKE) -f CMakeFiles/doxygen.dir/build.make CMakeFiles/doxygen.dir/build
-.PHONY : doxygen/fast
+gmock_main/fast:
+	$(MAKE) -f gtest/CMakeFiles/gmock_main.dir/build.make gtest/CMakeFiles/gmock_main.dir/build
+.PHONY : gmock_main/fast
 
 #=============================================================================
-# Target rules for targets named gtest
+# Target rules for targets named gmock
 
 # Build rule for target.
-gtest: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 gtest
-.PHONY : gtest
+gmock: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gmock
+.PHONY : gmock
 
 # fast build rule for target.
-gtest/fast:
-	$(MAKE) -f gtest/CMakeFiles/gtest.dir/build.make gtest/CMakeFiles/gtest.dir/build
-.PHONY : gtest/fast
+gmock/fast:
+	$(MAKE) -f gtest/CMakeFiles/gmock.dir/build.make gtest/CMakeFiles/gmock.dir/build
+.PHONY : gmock/fast
 
 #=============================================================================
 # Target rules for targets named gtest_main
@@ -253,21 +266,21 @@ gtest_main: cmake_check_build_system
 
 # fast build rule for target.
 gtest_main/fast:
-	$(MAKE) -f gtest/CMakeFiles/gtest_main.dir/build.make gtest/CMakeFiles/gtest_main.dir/build
+	$(MAKE) -f gtest/gtest/CMakeFiles/gtest_main.dir/build.make gtest/gtest/CMakeFiles/gtest_main.dir/build
 .PHONY : gtest_main/fast
 
 #=============================================================================
-# Target rules for targets named _catkin_empty_exported_target
+# Target rules for targets named gtest
 
 # Build rule for target.
-_catkin_empty_exported_target: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _catkin_empty_exported_target
-.PHONY : _catkin_empty_exported_target
+gtest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gtest
+.PHONY : gtest
 
 # fast build rule for target.
-_catkin_empty_exported_target/fast:
-	$(MAKE) -f teleop_twist_keyboard/CMakeFiles/_catkin_empty_exported_target.dir/build.make teleop_twist_keyboard/CMakeFiles/_catkin_empty_exported_target.dir/build
-.PHONY : _catkin_empty_exported_target/fast
+gtest/fast:
+	$(MAKE) -f gtest/gtest/CMakeFiles/gtest.dir/build.make gtest/gtest/CMakeFiles/gtest.dir/build
+.PHONY : gtest/fast
 
 #=============================================================================
 # Target rules for targets named drive_bot
@@ -595,6 +608,19 @@ ball_chaser_generate_messages/fast:
 .PHONY : ball_chaser_generate_messages/fast
 
 #=============================================================================
+# Target rules for targets named _catkin_empty_exported_target
+
+# Build rule for target.
+_catkin_empty_exported_target: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _catkin_empty_exported_target
+.PHONY : _catkin_empty_exported_target
+
+# fast build rule for target.
+_catkin_empty_exported_target/fast:
+	$(MAKE) -f ball_chaser/CMakeFiles/_catkin_empty_exported_target.dir/build.make ball_chaser/CMakeFiles/_catkin_empty_exported_target.dir/build
+.PHONY : _catkin_empty_exported_target/fast
+
+#=============================================================================
 # Target rules for targets named std_msgs_generate_messages_nodejs
 
 # Build rule for target.
@@ -711,45 +737,6 @@ geometry_msgs_generate_messages_py/fast:
 	$(MAKE) -f ball_chaser/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make ball_chaser/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
 .PHONY : geometry_msgs_generate_messages_py/fast
 
-#=============================================================================
-# Target rules for targets named request_publisher
-
-# Build rule for target.
-request_publisher: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 request_publisher
-.PHONY : request_publisher
-
-# fast build rule for target.
-request_publisher/fast:
-	$(MAKE) -f pgm_map_creator/CMakeFiles/request_publisher.dir/build.make pgm_map_creator/CMakeFiles/request_publisher.dir/build
-.PHONY : request_publisher/fast
-
-#=============================================================================
-# Target rules for targets named collision_map_creator
-
-# Build rule for target.
-collision_map_creator: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 collision_map_creator
-.PHONY : collision_map_creator
-
-# fast build rule for target.
-collision_map_creator/fast:
-	$(MAKE) -f pgm_map_creator/CMakeFiles/collision_map_creator.dir/build.make pgm_map_creator/CMakeFiles/collision_map_creator.dir/build
-.PHONY : collision_map_creator/fast
-
-#=============================================================================
-# Target rules for targets named collision_map_creator_msgs
-
-# Build rule for target.
-collision_map_creator_msgs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 collision_map_creator_msgs
-.PHONY : collision_map_creator_msgs
-
-# fast build rule for target.
-collision_map_creator_msgs/fast:
-	$(MAKE) -f pgm_map_creator/msgs/CMakeFiles/collision_map_creator_msgs.dir/build.make pgm_map_creator/msgs/CMakeFiles/collision_map_creator_msgs.dir/build
-.PHONY : collision_map_creator_msgs/fast
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -757,20 +744,21 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... install"
+	@echo "... doxygen"
+	@echo "... rebuild_cache"
 	@echo "... clean_test_results"
 	@echo "... run_tests"
 	@echo "... download_extra_data"
 	@echo "... tests"
 	@echo "... edit_cache"
-	@echo "... doxygen"
-	@echo "... rebuild_cache"
-	@echo "... list_install_components"
-	@echo "... install/strip"
 	@echo "... install/local"
 	@echo "... test"
-	@echo "... gtest"
+	@echo "... install/strip"
+	@echo "... list_install_components"
+	@echo "... gmock_main"
+	@echo "... gmock"
 	@echo "... gtest_main"
-	@echo "... _catkin_empty_exported_target"
+	@echo "... gtest"
 	@echo "... drive_bot"
 	@echo "... ball_chaser_gennodejs"
 	@echo "... ball_chaser_genlisp"
@@ -796,6 +784,7 @@ help:
 	@echo "... roscpp_generate_messages_nodejs"
 	@echo "... ball_chaser_generate_messages_py"
 	@echo "... ball_chaser_generate_messages"
+	@echo "... _catkin_empty_exported_target"
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... geometry_msgs_generate_messages_lisp"
 	@echo "... std_msgs_generate_messages_lisp"
@@ -805,9 +794,6 @@ help:
 	@echo "... _ball_chaser_generate_messages_check_deps_DriveToTarget"
 	@echo "... geometry_msgs_generate_messages_nodejs"
 	@echo "... geometry_msgs_generate_messages_py"
-	@echo "... request_publisher"
-	@echo "... collision_map_creator"
-	@echo "... collision_map_creator_msgs"
 .PHONY : help
 
 

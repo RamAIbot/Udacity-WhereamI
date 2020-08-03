@@ -2,14 +2,15 @@
 <launch>
  <arg name="map_file" default="$(find my_robot)/maps/map.yaml"/>
  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)"/>
+ <node name="map_odom_broadcaster" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 0 map odom 100"/>
  <node name="amcl" pkg="amcl" type="amcl" output="screen">
  <remap from="scan" to="/scan"/>
  <param name="odom_frame_id" value="odom"/>
  <param name="odom_model_type" value="diff-corrected"/>
  <param name="base_frame_id" value="robor_footprint"/>
  <param name="global_frame_id" value="map"/>
- <param name="initial_pose_x" value="0"/>
- <param name="initial_pose_y" value="0"/>
+ <param name="initial_pose_x" value="8.443678"/>
+ <param name="initial_pose_y" value="-2.591308"/>
  </node>
  <node name="move_base" pkg="move_base" type="move_base" respawn="false" output="screen">
  <remap from="scan" to="/scan"/>

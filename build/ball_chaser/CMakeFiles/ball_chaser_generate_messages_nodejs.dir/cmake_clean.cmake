@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/ball_chaser_generate_messages_nodejs"
-  "/home/robond/Project3/UdacityFollowme/devel/share/gennodejs/ros/ball_chaser/srv/DriveToTarget.js"
+  "/home/workspace/whereami/Udacity-WhereamI/devel/share/gennodejs/ros/ball_chaser/srv/DriveToTarget.js"
 )
 
 # Per-language clean rules from dependency scanning.

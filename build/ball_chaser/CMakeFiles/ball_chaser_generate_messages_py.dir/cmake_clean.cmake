@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/ball_chaser_generate_messages_py"
-  "/home/robond/Project3/UdacityFollowme/devel/lib/python2.7/dist-packages/ball_chaser/srv/_DriveToTarget.py"
-  "/home/robond/Project3/UdacityFollowme/devel/lib/python2.7/dist-packages/ball_chaser/srv/__init__.py"
+  "/home/workspace/whereami/Udacity-WhereamI/devel/lib/python2.7/dist-packages/ball_chaser/srv/_DriveToTarget.py"
+  "/home/workspace/whereami/Udacity-WhereamI/devel/lib/python2.7/dist-packages/ball_chaser/srv/__init__.py"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/robond/Project3/UdacityFollowme/src/ball_chaser/src/process_image.cpp" "/home/robond/Project3/UdacityFollowme/build/ball_chaser/CMakeFiles/process_image.dir/src/process_image.cpp.o"
+  "/home/workspace/whereami/Udacity-WhereamI/src/ball_chaser/src/process_image.cpp" "/home/workspace/whereami/Udacity-WhereamI/build/ball_chaser/CMakeFiles/process_image.dir/src/process_image.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -17,10 +17,10 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/home/robond/Project3/UdacityFollowme/devel/include"
+  "/home/workspace/whereami/Udacity-WhereamI/devel/include"
   "/opt/ros/kinetic/include"
   "/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
-  "/home/robond/Project3/UdacityFollowme/src/ball_chaser/include"
+  "/home/workspace/whereami/Udacity-WhereamI/src/ball_chaser/include"
   )
 
 # Targets to which this target links.
