@@ -1,0 +1,8 @@
+prefix=/home/robond/Project3/UdacityFollowme/install
+
+Name: ball_chaser
+Description: Description of ball_chaser
+Version: 0.0.0
+Cflags: -I/home/robond/Project3/UdacityFollowme/install/include
+Libs: -L/home/robond/Project3/UdacityFollowme/install/lib 
+Requires: 

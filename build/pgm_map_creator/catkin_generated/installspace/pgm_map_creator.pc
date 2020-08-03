@@ -1,0 +1,8 @@
+prefix=/home/robond/Project3/UdacityFollowme/install
+
+Name: pgm_map_creator
+Description: Description of pgm_map_creator
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/robond/Project3/UdacityFollowme/install/lib 
+Requires: 
