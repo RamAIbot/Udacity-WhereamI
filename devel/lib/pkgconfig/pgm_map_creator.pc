@@ -1,8 +1,8 @@
-prefix=/home/robond/Project3/UdacityFollowme/devel
+prefix=/home/workspace/whereami/Udacity-WhereamI/devel
 
 Name: pgm_map_creator
 Description: Description of pgm_map_creator
 Version: 0.0.0
 Cflags: 
-Libs: -L/home/robond/Project3/UdacityFollowme/devel/lib 
+Libs: -L${prefix}/lib 
 Requires: 

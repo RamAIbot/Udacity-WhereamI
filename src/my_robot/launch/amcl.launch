@@ -2,18 +2,29 @@
 <launch>
  <arg name="map_file" default="$(find my_robot)/maps/map.yaml"/>
  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)"/>
- <node name="map_odom_broadcaster" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 0 map odom 100"/>
+ <!--<node name="map_odom_broadcaster" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 0 map odom 100"/>-->
  <node name="amcl" pkg="amcl" type="amcl" output="screen">
- <remap from="scan" to="/scan"/>
+ <remap from="scan" to="scan"/>
  <param name="odom_frame_id" value="odom"/>
  <param name="odom_model_type" value="diff-corrected"/>
- <param name="base_frame_id" value="robor_footprint"/>
+ <param name="base_frame_id" value="robot_footprint"/>
  <param name="global_frame_id" value="map"/>
- <param name="initial_pose_x" value="8.443678"/>
- <param name="initial_pose_y" value="-2.591308"/>
+ <param name="initial_pose_x" value="-2.591308"/>
+ <param name="initial_pose_y" value="-8.443678"/>
+ <param name="initial_pose_a" value="-4.684166"/>
+ <param name="odom_alpha1" value="0.01"/>
+ <param name="odom_alpha2" value="0.01"/>
+ <param name="odom_alpha3" value="0.01"/>
+ <param name="odom_alpha4" value="0.01"/>
+ <!--<param name="max_particles" value="10000"/>-->
+ <!--<param name="update_min_d" value="0.01"/>
+ <param name="update_min_a" value="0.056"/>
+ <param name="laser_max_beams" value="500"/>-->
+ <!--<param name="laser_z_hit" value="0.8"/>
+ <param name="laser_z_rand" value="0.2"/>-->
  </node>
  <node name="move_base" pkg="move_base" type="move_base" respawn="false" output="screen">
- <remap from="scan" to="/scan"/>
+ <remap from="scan" to="scan"/>
  <param name="base_global_planner" value="navfn/NavfnROS" />
  <param name="base_local_planner" value="base_local_planner/TrajectoryPlannerROS" />
  <rosparam file="$(find my_robot)/config/costmap_common_params.yaml" command="load" ns="global_costmap" />
